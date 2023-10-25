@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ outputs, opt, config, pkgs, ... }:
+{ inputs, outputs, opt, config, pkgs, ... }:
 
 let
   proxy.http = "http://127.0.0.1:2081";
@@ -16,6 +16,13 @@ in {
   nixpkgs.overlays = [
     outputs.overlays.stable-packages
   ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users."${opt.user}" = import ../../home;
+    extraSpecialArgs = { inherit inputs outputs opt; };
+  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -118,12 +125,13 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    gcc gnumake neovim tmux lf
-    nodejs_20 (python311.withPackages(ps: with ps; [ requests ]))
+    gcc gnumake nodejs_20 python312 nix-output-monitor
     zip unzipNLS
-    file tree htop s-tui lazygit lazydocker
-    bind wget nmap
-    typst
+    file tree eza ripgrep fd fzf
+    tmux neovim lazygit lf nnn
+    neofetch btop iotop iftop s-tui lazydocker
+    strace ltrace lsof sysstat lm_sensors ethtool pciutils usbutils
+    bind wget nmap socat
   ];
   environment.variables = {
     SUDO_EDITOR = "nvim";

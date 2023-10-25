@@ -1,4 +1,4 @@
-{ outputs, opt, config, pkgs, ... }:
+{ inputs, outputs, opt, config, osConfig, pkgs, ... }:
 
 {
   nixpkgs.overlays = [
@@ -28,41 +28,12 @@
     enable = true;
     userName = "tianze0926";
     userEmail = "i@tianze.me";
-    extraConfig.http.proxy = "http://127.0.0.1:2081";
+    extraConfig.http.proxy = osConfig.networking.proxy.default;
   };
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    neofetch
-    nnn eza
-
-    zip unzipNLS
-
-    ripgrep # recursively searches directories for a regex pattern
-    fzf # A command-line fuzzy finder
-
-    bind nmap
-
-    file
-    tree
-
-    nix-output-monitor
-
-    btop  # replacement of htop/nmon
-    iotop # io monitoring
-    iftop # network monitoring
-
-    # system call monitoring
-    strace # system call monitoring
-    ltrace # library call monitoring
-    lsof # list open files
-
-    # system tools
-    sysstat
-    lm_sensors # for `sensors` command
-    ethtool
-    pciutils # lspci
-    usbutils # lsusb
+    typst
   ];
 
   # This value determines the home Manager release that your

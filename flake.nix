@@ -24,26 +24,35 @@
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
     inherit (self) outputs;
-    opt.user = "leo";
-    opt.hostName = "${opt.user}-server";
   in {
-    overlays = import ./overlays {inherit inputs;};
-    nixosConfigurations = {
+    overlays = import ./overlays { inherit inputs; };
+    nixosConfigurations =
+    (let
+      opt.user = "leo";
+      opt.hostName = "${opt.user}-server";
+    in {
       "${opt.hostName}" = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
-        specialArgs = {inherit outputs opt;};
+        specialArgs = { inherit inputs outputs opt; };
         modules = [
-          ./nixos/configuration.nix
-
+          ./hosts/leo-server/configuration.nix
           home-manager.nixosModules.home-manager
-          {
-            home-manager.useGlobalPkgs = true;
-            home-manager.useUserPackages = true;
-            home-manager.users."${opt.user}" = import ./home;
-            home-manager.extraSpecialArgs = {inherit outputs opt;};
-          }
         ];
       };
-    };
+    }) //
+    (let
+      opt.user = "leo";
+      opt.hostName = "${opt.user}-PC";
+    in {
+      "${opt.hostName}" = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs outputs opt; };
+        modules = [
+          ./hosts/${opt.hostName}/configuration.nix
+          home-manager.nixosModules.home-manager
+        ];
+      };
+    })
+    ;
   };
 }
