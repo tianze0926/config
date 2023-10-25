@@ -84,6 +84,7 @@ in {
 
   virtualisation.docker = {
     enable = true;
+    package = pkgs.docker_24;
     logDriver = "local";
     daemon.settings = {
       ipv6 = true;
@@ -92,11 +93,15 @@ in {
       ip6tables = true;
     };
   };
-  systemd.services."docker-network" = let network = "apps"; in {
+  systemd.services."docker-network" = let
+    network = "apps";
+    docker = "${config.virtualisation.docker.package}/bin/docker";
+  in {
     serviceConfig.Type = "oneshot";
     wantedBy = [ "docker.service" ];
     script = ''
-      ${pkgs.docker}/bin/docker network inspect ${network} > /dev/null 2>&1 || ${pkgs.docker}/bin/docker network create ${network} --ipv6 --subnet fd00:dead:beef::/48
+      ${docker} network inspect ${network} > /dev/null 2>&1 ||\
+        ${docker}/bin/docker network create ${network} --ipv6 --subnet fd00:dead:beef::/48
     '';
   };
 
