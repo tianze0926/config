@@ -1,8 +1,14 @@
-{ inputs, outputs, opt, config, osConfig, pkgs, ... }:
+{ inputs, outputs, opt, config, osConfig, pkgs, desktop ? false, ... }:
 
 {
+  imports = [
+  ] ++ (if desktop then [
+    ./desktop
+  ] else []);
+
   nixpkgs.overlays = [
     outputs.overlays.stable-packages
+    inputs.nur.overlay
   ];
 
   home.username = opt.user;

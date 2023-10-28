@@ -20,6 +20,7 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+    nur.url = "github:nix-community/NUR";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
@@ -35,7 +36,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs outputs opt; };
         modules = [
-          ./hosts/leo-server/configuration.nix
+          ./hosts/${opt.hostName}/configuration.nix
           home-manager.nixosModules.home-manager
         ];
       };
