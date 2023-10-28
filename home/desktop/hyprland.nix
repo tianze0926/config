@@ -44,7 +44,17 @@
   gestures = {
     workspace_swipe = true;
   };
+
+  group = {
+    groupbar = {
+      font_size = 10;
+      gradients = false;
+    };
+  };
   
+  misc = {
+    disable_hyprland_logo = true;
+  };
   
   # Example windowrule v1
   # windowrule = float, ^(kitty)$
@@ -66,11 +76,16 @@
     "$mainMod, R, exec, wofi --show drun"
     "$mainMod, P, pseudo,"
     "$mainMod, J, togglesplit,"
+    "$mainMod, W, togglegroup,"
     # Move focus with mainMod + arrow keys
     "$mainMod, left, movefocus, l"
+    "$mainMod, h, movefocus, l"
     "$mainMod, right, movefocus, r"
+    "$mainMod, l, movefocus, r"
     "$mainMod, up, movefocus, u"
+    "$mainMod, k, movefocus, u"
     "$mainMod, down, movefocus, d"
+    "$mainMod, j, movefocus, d"
     # Switch workspaces with mainMod + [0-9]
     "$mainMod, 1, workspace, 1"
     "$mainMod, 2, workspace, 2"
@@ -93,6 +108,15 @@
     "$mainMod SHIFT, 8, movetoworkspace, 8"
     "$mainMod SHIFT, 9, movetoworkspace, 9"
     "$mainMod SHIFT, 0, movetoworkspace, 10"
+    # Move window to direction
+    "$mainMod SHIFT, left, movewindoworgroup, l"
+    "$mainMod SHIFT, h, movewindoworgroup, l"
+    "$mainMod SHIFT, right, movewindoworgroup, r"
+    "$mainMod SHIFT, l, movewindoworgroup, r"
+    "$mainMod SHIFT, up, movewindoworgroup, u"
+    "$mainMod SHIFT, k, movewindoworgroup, u"
+    "$mainMod SHIFT, down, movewindoworgroup, d"
+    "$mainMod SHIFT, j, movewindoworgroup, d"
     # Scroll through existing workspaces with mainMod + scroll
     "$mainMod, mouse_down, workspace, e+1"
     "$mainMod, mouse_up, workspace, e-1"
