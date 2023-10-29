@@ -77,6 +77,8 @@
     "$mainMod, P, pseudo,"
     "$mainMod, J, togglesplit,"
     "$mainMod, W, togglegroup,"
+    "$mainMod, TAB, changegroupactive,f"
+    "$mainMod SHIFT, TAB, changegroupactive,b"
     # Move focus with mainMod + arrow keys
     "$mainMod, left, movefocus, l"
     "$mainMod, h, movefocus, l"
