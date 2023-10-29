@@ -33,6 +33,7 @@ in {
     firefox ungoogled-chromium
     copyq
     libreoffice
+    jellyfin-media-player
   ];
 
 }
