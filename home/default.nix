@@ -29,6 +29,9 @@
   #     xxx
   # '';
 
+  home.file.".local/share/fonts".source =
+    config.lib.file.mkOutOfStoreSymlink /run/current-system/sw/share/X11/fonts;
+
   # basic configuration of git, please change to your own
   programs.git = {
     enable = true;

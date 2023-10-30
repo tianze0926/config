@@ -145,6 +145,7 @@ in {
       </alias>
     </fontconfig>
   '';
+  fonts.fontDir.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
