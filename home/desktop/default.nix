@@ -27,9 +27,12 @@ in {
     settings = import ./hyprland.nix;
   };
 
+  programs.alacritty = {
+    enable = true;
+  };
+
   home.packages = with pkgs; [
     xdg-utils
-    wezterm
     firefox ungoogled-chromium
     copyq
     libreoffice
