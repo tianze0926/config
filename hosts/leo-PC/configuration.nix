@@ -224,7 +224,7 @@ in {
     file tree eza ripgrep fd fzf
     tmux neovim lazygit lf nnn
     neofetch btop iotop iftop s-tui lazydocker
-    killall strace ltrace lsof sysstat lm_sensors ethtool pciutils usbutils
+    strace ltrace lsof sysstat lm_sensors ethtool pciutils usbutils
     bind wget nmap socat
 
     pulseaudio pavucontrol
