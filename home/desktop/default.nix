@@ -38,6 +38,7 @@ in {
     copyq
     libreoffice
     jellyfin-media-player
+    rofi-wayland grimblast
   ];
 
 }

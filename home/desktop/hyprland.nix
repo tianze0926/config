@@ -73,7 +73,7 @@
     "$mainMod, M, exit,"
     "$mainMod, E, exec, dolphin"
     "$mainMod, V, togglefloating," 
-    "$mainMod, R, exec, wofi --show drun"
+    "$mainMod, R, exec, rofi -show run"
     "$mainMod, P, pseudo,"
     "$mainMod, J, togglesplit,"
     "$mainMod, W, togglegroup,"
