@@ -219,7 +219,7 @@ in {
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    gcc gnumake nodejs_20 python312 nix-output-monitor
+    gcc gnumake nodejs_20 nix-output-monitor
     zip unzipNLS
     file tree eza ripgrep fd fzf
     tmux neovim lazygit lf nnn
@@ -230,6 +230,8 @@ in {
     pulseaudio pavucontrol
     nvtop-amd
     ffmpeg
+  ] ++ [
+    pkgs.python312Full inputs.fix-python.packages.${opt.system}.default
   ];
   environment.variables = {
     SUDO_EDITOR = "nvim";

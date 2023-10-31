@@ -21,6 +21,7 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
+    fix-python.url = "github:GuillaumeDesforges/fix-python";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
@@ -31,9 +32,10 @@
     (let
       opt.user = "leo";
       opt.hostName = "${opt.user}-server";
+      opt.system = "x86_64-linux";
     in {
       "${opt.hostName}" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit (opt) system;
         specialArgs = { inherit inputs outputs opt; };
         modules = [
           ./hosts/${opt.hostName}/configuration.nix
@@ -44,9 +46,10 @@
     (let
       opt.user = "leo";
       opt.hostName = "${opt.user}-PC";
+      opt.system = "x86_64-linux";
     in {
       "${opt.hostName}" = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        inherit (opt) system;
         specialArgs = { inherit inputs outputs opt; };
         modules = [
           ./hosts/${opt.hostName}/configuration.nix
