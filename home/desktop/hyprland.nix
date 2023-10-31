@@ -70,9 +70,10 @@
   bind = [
     "$mainMod, Q, exec, alacritty"
     "$mainMod, C, killactive,"
-    "$mainMod, M, exit,"
+    "$mainMod SHIFT, M, exit,"
     "$mainMod, E, exec, dolphin"
-    "$mainMod, V, togglefloating," 
+    "$mainMod, F, togglefloating," 
+    "$mainMod, V, exec, copyq show" 
     "$mainMod, R, exec, rofi -show run"
     "$mainMod, P, pseudo,"
     "$mainMod, J, togglesplit,"
