@@ -41,4 +41,6 @@ in {
     rofi-wayland grimblast
   ];
 
+  programs.sioyek.enable = true;
+
 }
