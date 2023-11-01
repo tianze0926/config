@@ -5,6 +5,7 @@ in {
   imports = [
     ./mpv.nix
     ./dunst.nix
+    ./mimeapps
   ];
   home.pointerCursor = {
     gtk.enable = true;

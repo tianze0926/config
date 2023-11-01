@@ -7,12 +7,7 @@
   };
 
   # uri scheme
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "x-scheme-handler/mpv" = "mpv-uri.desktop";
-    };
-  };
+  xdg.mimeApps.defaultApplications."x-scheme-handler/mpv" = "mpv-uri.desktop";
   xdg.desktopEntries.mpv-uri = {
     name = "mpv for uri scheme";
     exec = "${pkgs.bash}/bin/bash ${config.home.homeDirectory}/.config/mpv/mpv-uri.sh %u";
