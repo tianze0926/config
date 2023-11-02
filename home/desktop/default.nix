@@ -6,6 +6,7 @@ in {
     ./mpv.nix
     ./dunst.nix
     ./mimeapps
+    ./sioyek.nix
   ];
   home.pointerCursor = {
     gtk.enable = true;
@@ -41,7 +42,5 @@ in {
     jellyfin-media-player
     rofi-wayland grimblast
   ];
-
-  programs.sioyek.enable = true;
 
 }
