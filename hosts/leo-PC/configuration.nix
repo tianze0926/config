@@ -110,6 +110,7 @@ in {
       nur.repos.cryolitia.fcitx5-nord
     ];
   };
+  environment.pathsToLink = [ "/share/fcitx5" ];
 
   services.ddccontrol.enable = true;
 
