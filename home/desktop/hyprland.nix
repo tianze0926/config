@@ -3,44 +3,37 @@
   monitor = [
     "DP-1,3840x2160,0x0,1.5"
     "eDP-1,2560x1600,2560x640,2"
-    #"DP-1,3840x2160,0x0,2"
-    #"eDP-1,2560x1600,1920x280,2"
   ];
-  workspace = [
-    "1, monitor:DP-1"
-    "2, monitor:eDP-1"
-  ];
-  
-  
+
   # See https://wiki.hyprland.org/Configuring/Keywords/ for more
-  
+
   # Execute your favorite apps at launch
   # exec-once = waybar & hyprpaper & firefox
   exec-once = "waybar & copyq & blueman-applet & fcitx5 & firefox";
-  
+
   # Source a file (multi-file configs)
   # source = ~/.config/hypr/myColors.conf
-  
+
   env = "XCURSOR_SIZE,24";
-  
+
   "device:msft0001:00-04f3:3138-touchpad" = {
     sensitivity = 0.8;
     natural_scroll = true;
   };
-  
+
   general = {
     gaps_in = 0;
     gaps_out = 0;
     border_size = 1;
     "col.active_border" = "rgb(285577)";
   };
-  
+
   animations.enabled = false;
-  
+
   dwindle = {
     pseudotile = true; # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
   };
-  
+
   gestures = {
     workspace_swipe = true;
   };
@@ -51,11 +44,11 @@
       gradients = false;
     };
   };
-  
+
   misc = {
     disable_hyprland_logo = true;
   };
-  
+
   # Example windowrule v1
   # windowrule = float, ^(kitty)$
   # Example windowrule v2
@@ -63,11 +56,11 @@
     "float,class:^(com.github.hluk.copyq)$"
   ];
   # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
-  
-  
+
+
   # See https://wiki.hyprland.org/Configuring/Keywords/ for more
   "$mainMod" = "SUPER";
-  
+
   # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
   bind = [
     "$mainMod, Q, exec, alacritty"
@@ -126,7 +119,7 @@
     "$mainMod, mouse_down, workspace, e+1"
     "$mainMod, mouse_up, workspace, e-1"
   ];
-  
+
   # Move/resize windows with mainMod + LMB/RMB and dragging
   bindm = [
     "$mainMod, mouse:272, movewindow"
