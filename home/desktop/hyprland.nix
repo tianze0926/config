@@ -59,7 +59,9 @@
   # Example windowrule v1
   # windowrule = float, ^(kitty)$
   # Example windowrule v2
-  # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+  windowrulev2 = [
+    "float,class:^(com.github.hluk.copyq)$"
+  ];
   # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
   
   
