@@ -142,31 +142,19 @@ in {
   services.blueman.enable = true;
 
   fonts.packages = with pkgs; [
-    noto-fonts noto-fonts-cjk noto-fonts-emoji
-    (nerdfonts.override { fonts = [ "Noto" ]; })
+    noto-fonts
+    noto-fonts-cjk-sans noto-fonts-cjk-serif
+    noto-fonts-emoji
+    source-sans source-serif
+    source-han-sans source-han-serif source-han-mono
+    (nerdfonts.override { fonts = [ "CodeNewRoman" ]; })
   ];
-  fonts.fontconfig.localConf = ''
-    <?xml version="1.0"?>
-    <!DOCTYPE fontconfig SYSTEM "fonts.dtd">
-    <fontconfig>
-      <alias>
-        <family>sans-serif</family>
-        <prefer>
-          <family>Noto Sans CJK SC</family>
-          <family>Noto Sans CJK TC</family>
-          <family>Noto Sans CJK JP</family>
-        </prefer>
-      </alias>
-      <alias>
-        <family>monospace</family>
-        <prefer>
-          <family>Noto Sans Mono CJK SC</family>
-          <family>Noto Sans Mono CJK TC</family>
-          <family>Noto Sans Mono CJK JP</family>
-        </prefer>
-      </alias>
-    </fontconfig>
-  '';
+  fonts.fontconfig.defaultFonts = {
+    serif = [ "Noto Serif" "Noto Serif CJK SC" ];
+    sansSerif = [ "Noto Sans" "Noto Sans CJK SC" ];
+    monospace = [ "CodeNewRoman Nerd Font" "Noto Sans Mono CJK SC" ];
+    emoji = [ "Noto Color Emoji" ];
+    };
   fonts.fontDir.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).

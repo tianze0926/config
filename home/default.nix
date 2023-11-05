@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./typst.nix
   ] ++ (if desktop then [
     ./desktop
   ] else []);
@@ -29,8 +30,8 @@
   #     xxx
   # '';
 
-  home.file.".local/share/fonts".source =
-    config.lib.file.mkOutOfStoreSymlink /run/current-system/sw/share/X11/fonts;
+  # home.file.".local/share/fonts".source =
+  #   config.lib.file.mkOutOfStoreSymlink /run/current-system/sw/share/X11/fonts;
 
   home.file.".config/nvim".source = ./nvim;
 
@@ -44,7 +45,6 @@
 
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
-    typst
   ];
 
   # This value determines the home Manager release that your

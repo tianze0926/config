@@ -32,6 +32,9 @@ in {
 
   programs.alacritty = {
     enable = true;
+    settings = {
+      font.size = 12.0;
+    };
   };
 
   home.packages = with pkgs; [
