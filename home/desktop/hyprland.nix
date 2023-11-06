@@ -89,13 +89,10 @@
       };
       binds = lib.attrsets.mapAttrsToList;
     in builtins.concatLists [
-      # Move focus with mainMod + arrow keys
       (binds (k: v: "$mainMod, ${k}, movefocus, ${v}") dict-dir)
-      # Move window to direction
       (binds (k: v: "$mainMod SHIFT, ${k}, movewindoworgroup, ${v}") dict-dir)
-      # Switch workspaces with mainMod + [0-9]
+      (binds (k: v: "$mainMod CTRL SHIFT, ${k}, movecurrentworkspacetomonitor, ${v}") dict-dir)
       (binds (k: v: "$mainMod, ${k}, workspace, ${v}") dict-num)
-      # Move active window to a workspace with mainMod + SHIFT + [0-9]
       (binds (k: v: "$mainMod SHIFT, ${k}, movetoworkspace, ${v}") dict-num)
     ]);
 
