@@ -3,6 +3,8 @@
 {
   imports = [
     ./typst.nix
+    ./shell.nix
+    ./python.nix
   ] ++ (if desktop then [
     ./desktop
   ] else []);

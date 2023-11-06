@@ -219,8 +219,6 @@ in {
     pulseaudio pavucontrol
     nvtop-amd
     ffmpeg
-  ] ++ [
-    pkgs.python312Full inputs.fix-python.packages.${opt.system}.default
   ];
   environment.variables = {
     SUDO_EDITOR = "nvim";
