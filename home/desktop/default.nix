@@ -3,6 +3,7 @@
   cursor.name = "capitaine-cursors";
 in {
   imports = [
+    ./hyprland.nix
     ./mpv.nix
     ./dunst.nix
     ./mimeapps
@@ -23,11 +24,6 @@ in {
     enable = true;
     settings.mainBar = import ./waybar/config.nix;
     style = ./waybar/style.css;
-  };
-
-  wayland.windowManager.hyprland = {
-    enable = true;
-    settings = import ./hyprland.nix;
   };
 
   programs.alacritty = {
