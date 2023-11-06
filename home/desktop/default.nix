@@ -7,7 +7,7 @@ in {
     ./mpv.nix
     ./dunst.nix
     ./mimeapps
-    ./sioyek.nix
+    ./pdf.nix
   ];
   home.pointerCursor = {
     gtk.enable = true;
