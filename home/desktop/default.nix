@@ -40,6 +40,7 @@ in {
     libreoffice
     jellyfin-media-player
     rofi-wayland grimblast
+    font-manager
   ];
 
 }
