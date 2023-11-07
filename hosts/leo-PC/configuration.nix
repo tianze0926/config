@@ -211,7 +211,7 @@ in {
   # $ nix search wget
   environment.systemPackages = with pkgs; [
     gcc gnumake nodejs_20 nix-output-monitor
-    atool zip unzipNLS
+    atool zip unzipNLS p7zip unar
     file tree eza ripgrep fd fzf
     tmux neovim lazygit lf nnn
     neofetch btop iotop iftop s-tui lazydocker
