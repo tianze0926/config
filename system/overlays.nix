@@ -1,6 +1,11 @@
 { inputs, outputs, ... }: {
   nixpkgs.overlays = [
-    outputs.overlays.stable-packages
+    (final: _prev: {
+      stable = import inputs.nixpkgs-stable {
+        system = final.system;
+        config.allowUnfree = false;
+      };
+    })
     inputs.nur.overlay
   ];
 

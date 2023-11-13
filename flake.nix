@@ -27,7 +27,6 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
     inherit (self) outputs;
   in {
-    overlays = import ./overlays { inherit inputs; };
     nixosConfigurations =
     (let
       opt.user = "leo";
