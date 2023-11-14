@@ -34,13 +34,16 @@ in {
   };
 
   home.packages = with pkgs; [
-    xdg-utils
+    xdg-utils xorg.xhost xorg.xeyes
+    pantheon.elementary-files
+    gparted
     firefox ungoogled-chromium
     copyq
     libreoffice
     jellyfin-media-player
     rofi-wayland grimblast
     font-manager
+    networkmanagerapplet
   ];
 
 }
