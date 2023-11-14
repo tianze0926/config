@@ -13,6 +13,5 @@
     monospace = [ "CodeNewRoman Nerd Font" "Noto Sans Mono CJK SC" ];
     emoji = [ "Noto Color Emoji" ];
     };
-  fonts.fontDir.enable = true;
 
 }

@@ -7,6 +7,7 @@
     ./docker.nix
     ./desktop
     ./home-manager.nix
+    ./typst.nix
   ];
 
   programs.fish.enable = true;

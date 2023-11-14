@@ -7,6 +7,9 @@
       };
     })
     inputs.nur.overlay
+    (final: prev: {
+      myRepo = inputs.myRepo.packages."${prev.system}";
+    })
   ];
 
 }

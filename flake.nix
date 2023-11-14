@@ -9,9 +9,11 @@
     ];
     extra-substituters = [
       "https://nix-community.cachix.org"
+      "https://tianze0926.cachix.org"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+      "tianze0926.cachix.org-1:vA+L4R+TywN/M6haoQfJsk9UzMCgPIiu5ZuNTH+lnVI="
     ];
   };
 
@@ -22,6 +24,10 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
     fix-python.url = "github:GuillaumeDesforges/fix-python";
+    myRepo = {
+      url = "github:tianze0926/nur-packages";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let

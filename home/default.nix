@@ -1,12 +1,11 @@
-{ inputs, outputs, opt, config, osConfig, pkgs, desktop ? false, ... }:
+{ inputs, outputs, opt, config, osConfig, pkgs, configSys, desktop ? false, ... }:
 
 {
   imports = [
-    ./typst.nix
     ./shell.nix
     ./nvim.nix
     ./python.nix
-  ] ++ (if desktop then [
+  ] ++ configSys ++ (if desktop then [
     ./desktop
   ] else []);
 
