@@ -18,3 +18,10 @@ vim.api.nvim_create_autocmd("FileType", {
   -- end,
   command = "setlocal commentstring=//%s",
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = {
+    "nix",
+  },
+  command = "setlocal commentstring=#%s",
+})
