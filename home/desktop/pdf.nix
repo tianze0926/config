@@ -9,5 +9,6 @@
     startup_commands = builtins.concatStringsSep ";" [
       "toggle_scrollbar"
     ];
+    page_separator_width = "2";
   };
 }
