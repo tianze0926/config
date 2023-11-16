@@ -8,6 +8,7 @@
     ./desktop
     ./home-manager.nix
     ./typst.nix
+    ./lf.nix
   ];
 
   programs.fish.enable = true;
@@ -17,7 +18,7 @@
     gcc gnumake nodejs_20 python312 nix-output-monitor
     atool zip unzipNLS p7zip unar
     file tree eza ripgrep fd fzf
-    tmux neovim lazygit lf nnn
+    tmux neovim lazygit nnn
     neofetch btop iotop iftop s-tui lazydocker
     strace ltrace lsof sysstat lm_sensors ethtool pciutils usbutils
     ncdu
