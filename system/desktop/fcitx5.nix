@@ -6,7 +6,7 @@
       libsForQt5.fcitx5-qt
       fcitx5-chinese-addons
       fcitx5-lua
-      nur.repos.cryolitia.fcitx5-nord
+      fcitx5-nord
       nur.repos.ruixi-rebirth.fcitx5-pinyin-zhwiki
       nur.repos.ruixi-rebirth.fcitx5-pinyin-moegirl
     ];
