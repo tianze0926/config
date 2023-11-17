@@ -24,6 +24,7 @@
     ncdu
     bind wget nmap socat
     ffmpeg
+    expect
   ];
   environment.variables = {
     SUDO_EDITOR = "nvim";
