@@ -1,8 +1,4 @@
-{ lib, config, inputs, outputs, opt, ... }:
-let
-  cfg = config.custom.desktop;
-in {
-
+desktop: { lib, config, inputs, outputs, opt, ... }:{
   options.hm = with lib; mkOption {
     default = [];
     type = types.listOf (types.functionTo types.attrs);
@@ -15,7 +11,7 @@ in {
     extraSpecialArgs = {
       inherit inputs outputs opt;
       configSys = config.hm;
-      desktop = cfg.enable;
+      desktop = desktop.enable;
     };
   };
 }

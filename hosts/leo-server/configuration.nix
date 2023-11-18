@@ -8,14 +8,12 @@
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../system
+      (import ../../system {
+        proxy.enable = true;
+        desktop.enable = true;
+        disk_optimize.bootloader = "systemd-boot";
+      })
     ];
-
-  custom = {
-    mainland.enable = true;
-    desktop.enable = true;
-    diskOptimize.bootloader = "systemd-boot";
-  };
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;

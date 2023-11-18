@@ -1,12 +1,16 @@
-{ pkgs, ... }: {
+{
+  proxy,
+  desktop,
+  disk_optimize,
+}: { pkgs, ... }: {
   imports = [
     ./user.nix
-    ./disk_optimize.nix
-    ./proxy.nix
+    (import ./disk_optimize.nix disk_optimize)
+    (import ./proxy.nix proxy)
     ./overlays.nix
     ./docker.nix
-    ./desktop
-    ./home-manager.nix
+    (import ./desktop desktop)
+    (import ./home-manager.nix desktop)
     ./typst.nix
     ./lf.nix
   ];
