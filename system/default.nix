@@ -19,7 +19,8 @@
   programs.git.enable = true;
 
   environment.systemPackages = with pkgs; [
-    gcc gnumake nodejs_20 python312 nix-output-monitor
+    gcc gnumake nodejs_20 python312
+    nix-output-monitor nix-tree
     atool zip unzipNLS p7zip unar
     file tree eza ripgrep fd fzf
     tmux neovim lazygit nnn
