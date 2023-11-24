@@ -56,6 +56,7 @@
     # Example windowrule v2
     windowrulev2 = [
       "float,class:^(com.github.hluk.copyq)$"
+      "workspace 10,class:^(org.freedesktop.Xwayland)$"
     ];
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 

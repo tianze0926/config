@@ -8,6 +8,7 @@ in {
     ./dunst.nix
     ./mimeapps
     ./pdf.nix
+    ./wemeet
   ];
   home.pointerCursor = {
     gtk.enable = true;
