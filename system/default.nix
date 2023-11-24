@@ -26,7 +26,7 @@
     tmux neovim lazygit nnn
     neofetch btop iotop iftop s-tui lazydocker
     strace ltrace lsof sysstat lm_sensors ethtool pciutils usbutils
-    ncdu
+    ncdu ntfs3g
     bind wget nmap socat
     ffmpeg
     expect
