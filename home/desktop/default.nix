@@ -51,6 +51,7 @@ in {
     rofi-wayland grimblast
     font-manager
     networkmanagerapplet
+    polkit_gnome
     vscodium-fhs
     inkscape-with-extensions
   ];

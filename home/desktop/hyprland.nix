@@ -11,7 +11,8 @@
 
     # Execute your favorite apps at launch
     # exec-once = waybar & hyprpaper & firefox
-    exec-once = "waybar & copyq & blueman-applet & fcitx5 & firefox";
+    exec-once = "waybar & copyq & blueman-applet & fcitx5 & firefox"
+      + " & ${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
 
     # Source a file (multi-file configs)
     # source = ~/.config/hypr/myColors.conf
