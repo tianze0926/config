@@ -33,6 +33,12 @@ in {
       font.size = 12.0;
     };
   };
+  programs.foot = {
+    enable = true;
+    settings = {
+      main.font = "monospace:size=11";
+    };
+  };
 
   home.packages = with pkgs; [
     xdg-utils xorg.xhost xorg.xeyes
@@ -45,6 +51,7 @@ in {
     rofi-wayland grimblast
     font-manager
     networkmanagerapplet
+    inkscape-with-extensions
   ];
 
 }
