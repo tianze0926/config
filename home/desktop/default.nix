@@ -30,7 +30,7 @@ in {
   programs.alacritty = {
     enable = true;
     settings = {
-      font.size = 12.0;
+      font.size = 11.0;
     };
   };
   programs.foot = {
