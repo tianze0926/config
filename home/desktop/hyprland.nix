@@ -1,4 +1,4 @@
-{ lib, ... }: {
+{ lib, pkgs, ... }: {
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
     # See https://wiki.hyprland.org/Configuring/Monitors/
@@ -70,9 +70,9 @@
       "$mainMod, Q, exec, foot"
       "$mainMod, C, killactive,"
       "$mainMod SHIFT, M, exit,"
-      "$mainMod, E, exec, dolphin"
-      "$mainMod, F, togglefloating," 
-      "$mainMod, V, exec, copyq show" 
+      "$mainMod, E, exec, io.elementary.files"
+      "$mainMod, F, togglefloating,"
+      "$mainMod, V, exec, copyq show"
       "$mainMod, R, exec, rofi -show run"
       "$mainMod, P, pseudo,"
       "$mainMod, J, togglesplit,"
