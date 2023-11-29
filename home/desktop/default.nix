@@ -1,4 +1,4 @@
-{ pkgs, ... }: let
+{ pkgs, config, ... }: let
   cursor.package = pkgs.capitaine-cursors;
   cursor.name = "capitaine-cursors";
 in {
@@ -35,8 +35,9 @@ in {
   };
   programs.foot = {
     enable = true;
-    settings = {
-      main.font = "monospace:size=11";
+    settings.main = {
+      font = "monospace:size=11";
+      include = "${config.programs.foot.package.themes}/share/foot/themes/hacktobers";
     };
   };
 
