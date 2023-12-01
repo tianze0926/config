@@ -2,7 +2,7 @@
   imports = [
     ({ pkgs, lib, ... }: {
       home.packages = with pkgs; [ python312Full ];
-      home.file.".config/pip/pip.conf".text = lib.generators.toINI {} {
+      xdg.configFile."pip/pip.conf".text = lib.generators.toINI {} {
         global.index-url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple";
       };
     })

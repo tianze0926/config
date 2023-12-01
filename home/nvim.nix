@@ -1,5 +1,5 @@
 { pkgs, ... }: {
-  home.file.".config/nvim".source = ./nvim;
+  xdg.configFile.nvim.source = ./nvim;
 
   home.packages = with pkgs; [
     typst-lsp
