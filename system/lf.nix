@@ -21,8 +21,6 @@
         set sixel true
         set previewer ctpv
         set cleaner ctpvclear
-        &ctpv -s $id
-        &ctpvquit $id
       '';
     })
   ];
