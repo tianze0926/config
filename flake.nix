@@ -10,10 +10,12 @@
     extra-substituters = [
       "https://nix-community.cachix.org"
       "https://tianze0926.cachix.org"
+      "https://hyprland.cachix.or"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       "tianze0926.cachix.org-1:vA+L4R+TywN/M6haoQfJsk9UzMCgPIiu5ZuNTH+lnVI="
+      "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
     ];
   };
 
@@ -28,6 +30,7 @@
       url = "github:tianze0926/nur-packages";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hyprland.url = "github:hyprwm/Hyprland";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let

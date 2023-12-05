@@ -1,5 +1,6 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, inputs, ... }: {
   wayland.windowManager.hyprland.enable = true;
+  wayland.windowManager.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   wayland.windowManager.hyprland.settings = {
     # See https://wiki.hyprland.org/Configuring/Monitors/
     monitor = [
@@ -44,6 +45,7 @@
     group = {
       groupbar = {
         font_size = 10;
+        render_titles = false;
         gradients = false;
       };
     };
