@@ -55,6 +55,7 @@ in {
     polkit_gnome
     vscodium-fhs
     inkscape-with-extensions
+    myRepo.owncloud-client
   ];
 
 }

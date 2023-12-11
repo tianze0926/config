@@ -9,4 +9,6 @@
     ${opt.user} ALL=(ALL) NOPASSWD:ALL
   '';
 
+  nix.settings.trusted-users = [ opt.user ];
+
 }

@@ -6,11 +6,11 @@
     substituters = [
       "https://mirrors.cernet.edu.cn/nix-channels/store"
       "https://cache.nixos.org/"
+      "https://tianze0926.cachix.org"
+      "https://nix-community.cachix.org"
+      "https://hyprland.cachix.org"
     ];
     extra-substituters = [
-      "https://nix-community.cachix.org"
-      "https://tianze0926.cachix.org"
-      "https://hyprland.cachix.or"
     ];
     extra-trusted-public-keys = [
       "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
@@ -26,10 +26,7 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
     fix-python.url = "github:GuillaumeDesforges/fix-python";
-    myRepo = {
-      url = "github:tianze0926/nur-packages";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    myRepo.url = "github:tianze0926/nur-packages";
     hyprland.url = "github:hyprwm/Hyprland";
   };
 

@@ -9,11 +9,6 @@
     ./desktop
   ] else []);
 
-  nixpkgs.overlays = [
-    outputs.overlays.stable-packages
-    inputs.nur.overlay
-  ];
-
   home.username = opt.user;
   home.homeDirectory = "/home/${opt.user}";
 
