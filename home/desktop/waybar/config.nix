@@ -6,9 +6,9 @@
     "hyprland/workspaces"
   ];
   modules-right = [
+    "network"
     "pulseaudio"
     "backlight"
-    "network"
     "memory"
     "cpu"
     "battery"
@@ -55,8 +55,8 @@
 
   network = {
     interval = 5;
-    format-wifi = "   {essid} ({signalStrength}%)";
-    format-ethernet = "  {ifname}: {ipaddr}/{cidr}";
+    format-wifi = "   {essid} {bandwidthDownBytes} {bandwidthUpBytes}";
+    format-ethernet = "󰈀  {ifname} {bandwidthDownBytes} {bandwidthUpBytes}";
     format-disconnected = "⚠  Disconnected";
     tooltip-format = "{ifname}: {ipaddr}";
   };
