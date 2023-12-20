@@ -26,12 +26,12 @@
       servers=119.29.29.29,2402:4e00::1
     '';
   };
-  # https://github.com/NixOS/nixpkgs/issues/180175#issuecomment-1658731959
-  systemd.services.NetworkManager-wait-online = {
-    serviceConfig = {
-      ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q" ];
-    };
-  };
+  # # https://github.com/NixOS/nixpkgs/issues/180175#issuecomment-1658731959
+  # systemd.services.NetworkManager-wait-online = {
+  #   serviceConfig = {
+  #     ExecStart = [ "" "${pkgs.networkmanager}/bin/nm-online -q" ];
+  #   };
+  # };
   boot.kernel.sysctl = {
     "net.ipv4.tcp_congestion_control" = "bbr";
   };
