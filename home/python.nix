@@ -6,9 +6,6 @@
         global.index-url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple";
       };
     })
-    ({ inputs, opt, ... }: {
-      home.packages = [ inputs.fix-python.packages.${opt.system}.default ];
-    })
     ({ pkgs, ... }: {
       home.packages = with pkgs; [ conda ];
       programs.fish.functions.conda-fish = ''

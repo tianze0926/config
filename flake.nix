@@ -25,7 +25,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
-    fix-python.url = "github:GuillaumeDesforges/fix-python";
     myRepo.url = "github:tianze0926/nur-packages";
     hyprland.url = "github:hyprwm/Hyprland";
   };
