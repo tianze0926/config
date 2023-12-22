@@ -13,6 +13,7 @@
     (import ./home-manager.nix desktop)
     ./typst.nix
     ./lf.nix
+    ./fhs.nix
   ];
 
   programs.fish.enable = true;
