@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   i18n.inputMethod = {
     enabled = "fcitx5";
     fcitx5.addons = with pkgs; [
@@ -12,5 +12,9 @@
     ];
   };
   environment.pathsToLink = [ "/share/fcitx5" ];
+
+  environment.variables = {
+    GTK_IM_MODULE = lib.mkForce "";
+  };
 
 }
