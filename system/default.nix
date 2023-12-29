@@ -28,7 +28,7 @@
     neofetch btop iotop iftop s-tui lazydocker
     strace ltrace lsof sysstat lm_sensors ethtool pciutils usbutils
     ncdu ntfs3g
-    bind wget nmap socat
+    traceroute bind wget nmap socat
     ffmpeg
     expect
   ];
