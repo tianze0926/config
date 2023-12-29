@@ -134,7 +134,8 @@ in {
     zip unzipNLS
     file tree eza ripgrep fd fzf
     tmux neovim lazygit lf nnn
-    neofetch btop iotop iftop s-tui lazydocker
+    neofetch btop iotop iftop lazydocker
+    s-tui stress
     strace ltrace lsof sysstat lm_sensors ethtool pciutils usbutils
     bind wget nmap socat
   ];
