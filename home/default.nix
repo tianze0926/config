@@ -36,6 +36,19 @@
     typst
   ];
 
+  programs.fish = {
+    enable = true;
+    shellInit = ''
+      set -x ff (string split \n $fx)
+    '';
+    functions = {
+      # combine video and audio, particularly useful for bilibili download
+      ffmpeg_merge = ''
+        ${pkgs.ffmpeg}/bin/ffmpeg -i $ff[1] -i $ff[2] -c copy merged.mkv
+      '';
+    };
+  };
+
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
   # when a new home Manager release introduces backwards
