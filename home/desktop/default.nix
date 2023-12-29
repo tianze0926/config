@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: let
+{ pkgs, ... }: let
   cursor.package = pkgs.capitaine-cursors;
   cursor.name = "capitaine-cursors";
 in {
