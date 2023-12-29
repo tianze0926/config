@@ -2,8 +2,12 @@
   options.custom.lf.preview = lib.mkOption { default = true; };
 
   config.hm = [
-    ({ ... }: {
+    ({ config, ... }: {
       programs.lf.enable = true;
+      programs.lf.extraConfig = ''
+        setlocal ${config.home.homeDirectory}/Downloads sortby time
+        setlocal ${config.home.homeDirectory}/Downloads reverse
+      '';
     })
     ({ lib, osConfig, ... }: lib.mkIf osConfig.custom.lf.preview {
       home.packages = with pkgs; [
@@ -17,11 +21,11 @@
       xdg.configFile."ctpv/config".text = ''
         set chafasixel
       '';
-      programs.lf.extraConfig = ''
-        set sixel true
-        set previewer ctpv
-        set cleaner ctpvclear
-      '';
+      programs.lf.settings = {
+        sixel = true;
+        previewer = "ctpv";
+        cleaner = "ctpvclear";
+      };
     })
   ];
 }
