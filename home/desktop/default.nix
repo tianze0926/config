@@ -4,6 +4,7 @@
 in {
   imports = [
     ./hyprland.nix
+    ./terminal.nix
     ./mpv.nix
     ./dunst.nix
     ./mimeapps
@@ -31,20 +32,6 @@ in {
     enable = true;
     settings.mainBar = import ./waybar/config.nix;
     style = ./waybar/style.css;
-  };
-
-  programs.alacritty = {
-    enable = true;
-    settings = {
-      font.size = 11.0;
-    };
-  };
-  programs.foot = {
-    enable = true;
-    settings.main = {
-      font = "monospace:size=11";
-      include = "${config.programs.foot.package.themes}/share/foot/themes/hacktobers";
-    };
   };
 
   home.packages = with pkgs; [

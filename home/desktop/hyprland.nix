@@ -69,7 +69,6 @@
 
     # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
     bind = [
-      "$mainMod, Q, exec, foot"
       "$mainMod, C, killactive,"
       "$mainMod SHIFT, M, exit,"
       "$mainMod, E, exec, io.elementary.files"
