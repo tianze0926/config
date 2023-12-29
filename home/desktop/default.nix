@@ -18,8 +18,14 @@ in {
   };
   gtk = {
     enable = true;
-    iconTheme = { inherit (cursor) package name; };
+    cursorTheme = { inherit (cursor) package name; };
+    iconTheme.package = pkgs.gnome.adwaita-icon-theme;
+    iconTheme.name = "Adwaita";
+    theme.package = pkgs.gnome.gnome-themes-extra;
+    theme.name = "Adwaita";
   };
+  qt.style.package = pkgs.adwaita-qt6;
+  qt.style.name = "Adwaita";
 
   programs.waybar = {
     enable = true;
