@@ -35,4 +35,9 @@
   environment.variables = {
     SUDO_EDITOR = "nvim";
   };
+
+  services.earlyoom = {
+    enable = true;
+    enableNotifications = true;
+  };
 }
