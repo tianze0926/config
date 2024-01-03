@@ -5,5 +5,8 @@
   };
   programs.fish = {
     enable = true;
+    shellInit = ''
+      set -x ff (string split \n $fx)
+    '';
   };
 }
