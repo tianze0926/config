@@ -7,6 +7,7 @@
     source-sans source-serif
     source-han-sans source-han-serif source-han-mono
     (nerdfonts.override { fonts = [ "CodeNewRoman" ]; })
+    liberation_ttf # replace Times New Roman, Arial
   ];
   fonts.fontconfig.defaultFonts = {
     serif = [ "Noto Serif" "Noto Serif CJK SC" ];
@@ -22,6 +23,12 @@
         <family>Microsoft YaHei</family>
         <prefer>
           <family>Noto Sans CJK SC</family>
+        </prefer>
+      </alias>
+      <alias>
+        <family>Arial</family>
+        <prefer>
+          <family>Liberation Sans</family>
         </prefer>
       </alias>
     </fontconfig>
