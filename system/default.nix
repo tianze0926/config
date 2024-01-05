@@ -26,7 +26,7 @@
     atool zip unzipNLS p7zip unar
     file tree eza ripgrep fd fzf
     tmux neovim lazygit nnn
-    neofetch btop iotop iftop s-tui lazydocker
+    neofetch htop btop iotop iftop s-tui lazydocker
     strace ltrace lsof sysstat lm_sensors ethtool pciutils usbutils
     ncdu ntfs3g
     traceroute bind wget nmap socat
