@@ -2,9 +2,14 @@
   programs.mpv = {
     enable = true;
     config = {
-      profile = "pseudo-gui";
+      player-operation-mode = "pseudo-gui";
+      sub-font-size = "45";
+      autofit-larger = "1920x1080";
     };
   };
+  wayland.windowManager.hyprland.settings.windowrulev2 = [
+    "float,class:^(mpv)$"
+  ];
 
   # uri scheme
   xdg.mimeApps.defaultApplications."x-scheme-handler/mpv" = "mpv-uri.desktop";
