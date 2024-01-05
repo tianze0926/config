@@ -14,6 +14,7 @@
     ./typst.nix
     ./lf.nix
     ./fhs.nix
+    ./ssh.nix
   ];
 
   programs.fish.enable = true;
