@@ -5,6 +5,7 @@
       player-operation-mode = "pseudo-gui";
       sub-font-size = "45";
       autofit-larger = "1920x1080";
+      keep-open = "always";
     };
   };
   wayland.windowManager.hyprland.settings.windowrulev2 = [
