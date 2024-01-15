@@ -36,6 +36,8 @@ in {
   '';
   boot.kernel.sysctl = {
     "net.ipv4.tcp_congestion_control" = "bbr";
+    "net.core.rmem_max" = 2500000;
+    "net.core.wmem_max" = 2500000;
   };
 
 
