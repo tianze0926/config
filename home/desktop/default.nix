@@ -48,7 +48,14 @@ in {
     polkit_gnome
     vscodium-fhs
     inkscape-with-extensions
+    wireshark
     myRepo.owncloud-client
+    zotero_7
+    praat
+    remmina
+    audacity
+    ark
+    cloudflared
   ];
 
 }
