@@ -6,8 +6,15 @@
       sub-font-size = "45";
       autofit-larger = "1920x1080";
       keep-open = "always";
+      save-position-on-quit = "yes";
+      write-filename-in-watch-later-config = "yes";
     };
   };
+  programs.lf.extraConfig = ''
+    setlocal ${config.home.homeDirectory}/.local/state/mpv/watch_later sortby time
+    setlocal ${config.home.homeDirectory}/.local/state/mpv/watch_later reverse
+  '';
+
   wayland.windowManager.hyprland.settings.windowrulev2 = [
     "float,class:^(mpv)$"
   ];
