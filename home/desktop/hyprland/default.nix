@@ -5,6 +5,7 @@ in {
   imports = [
     ./hyprland.nix
     ./dunst.nix
+    ./mimeapps
   ];
 
   home.pointerCursor = {

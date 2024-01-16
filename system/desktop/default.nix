@@ -1,8 +1,8 @@
 { enable }: { ... }: {
   imports = if enable then [
-    ./display.nix
+    ./hyprland
+
     ./fonts.nix
-    ./fcitx5.nix
-    ./media.nix
+    ./amd.nix
   ] else [];
 }

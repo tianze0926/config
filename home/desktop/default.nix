@@ -4,7 +4,6 @@
 
     ./terminal.nix
     ./mpv.nix
-    ./mimeapps
     ./pdf.nix
     ./wemeet
   ];
