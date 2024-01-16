@@ -2,6 +2,7 @@
   imports = [
     ./hyprland
 
+    ./theme.nix
     ./terminal.nix
     ./mpv.nix
     ./pdf.nix
