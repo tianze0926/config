@@ -1,4 +1,6 @@
 { pkgs, ... }: {
+  hardware.pulseaudio.enable = false;
+
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -7,9 +9,6 @@
     pulse.enable = true;
     jack.enable = true;
   };
-
-  hardware.bluetooth.enable = true;
-  services.blueman.enable = true;
 
   environment.systemPackages = with pkgs; [
     pulseaudio pavucontrol
