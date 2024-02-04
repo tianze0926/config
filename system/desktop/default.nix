@@ -5,6 +5,7 @@
     ./kde
 
     ./fonts.nix
+    ./fcitx5.nix
     ./amd.nix
     ./audio.nix
   ] else [];

@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   imports = [
     ./extensions.nix
-    ./fcitx5.nix
   ];
 
   services.xserver.enable = true;

@@ -11,10 +11,4 @@
       nur.repos.ruixi-rebirth.fcitx5-pinyin-moegirl
     ];
   };
-  # environment.pathsToLink = [ "/share/fcitx5" ];
-  #
-  # environment.variables = {
-  #   GTK_IM_MODULE = lib.mkForce "";
-  # };
-
 }
