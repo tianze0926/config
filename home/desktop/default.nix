@@ -1,7 +1,7 @@
 { pkgs, ... }: {
   imports = [
     # ./hyprland
-    ./gnome
+    # ./gnome
 
     ./terminal.nix
     ./mpv.nix

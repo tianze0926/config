@@ -1,7 +1,8 @@
 { enable }: { ... }: {
   imports = if enable then [
     # ./hyprland
-    ./gnome
+    # ./gnome
+    ./kde
 
     ./fonts.nix
     ./amd.nix
