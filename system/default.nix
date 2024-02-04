@@ -32,6 +32,7 @@
     traceroute bind wget nmap socat
     ffmpeg
     expect
+    efibootmgr
   ];
   environment.variables = {
     SUDO_EDITOR = "nvim";
