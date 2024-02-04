@@ -3,7 +3,6 @@
     # ./hyprland
     ./gnome
 
-    ./theme.nix
     ./terminal.nix
     ./mpv.nix
     ./pdf.nix

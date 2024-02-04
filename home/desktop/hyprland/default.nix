@@ -3,6 +3,7 @@
     ./hyprland.nix
     ./dunst.nix
     ./mimeapps
+    ./theme.nix
   ];
 
   programs.waybar = {
