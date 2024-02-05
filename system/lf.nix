@@ -11,7 +11,7 @@
     })
     ({ lib, osConfig, ... }: lib.mkIf osConfig.custom.lf.preview {
       home.packages = with pkgs; [
-        ctpv
+        myRepo.ctpv
         exiftool # any
         chafa myRepo.tmux imagemagick # image
         poppler_utils # pdf
