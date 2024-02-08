@@ -26,6 +26,7 @@
     remmina
     audacity
     cloudflared
+    obs-studio
   ];
 
 }
