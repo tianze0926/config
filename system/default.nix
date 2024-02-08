@@ -38,6 +38,8 @@
     SUDO_EDITOR = "nvim";
   };
 
+  services.flatpak.enable = true;
+
   services.earlyoom = {
     enable = true;
     enableNotifications = true;
