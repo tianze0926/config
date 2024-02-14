@@ -13,6 +13,7 @@
 
   environment.systemPackages = with pkgs; [
     libsForQt5.yakuake
+    wl-clipboard
   ];
 
 }
