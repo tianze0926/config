@@ -2,6 +2,7 @@
   imports = [
     ./fcitx5.nix
     ./cursor.nix
+    ./plasma-manager
   ];
 
   services.xserver.enable = true;

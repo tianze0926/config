@@ -27,6 +27,9 @@
     nur.url = "github:nix-community/NUR";
     myRepo.url = "github:tianze0926/nur-packages";
     hyprland.url = "github:hyprwm/Hyprland";
+    plasma-manager.url = "github:pjones/plasma-manager";
+    plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
+    plasma-manager.inputs.home-manager.follows = "home-manager";
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
