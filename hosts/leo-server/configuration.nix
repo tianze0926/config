@@ -31,9 +31,22 @@ in {
   networking.hostName = opt.hostName;
   # Pick only one of the below networking options.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-  networking.dhcpcd.extraConfig = ''
-    ipv6ra_noautoconf
-  '';
+  networking.dhcpcd.extraConfig = builtins.concatStringsSep "\n" [
+    # OpenWrt is not flexible enough w.r.t. whitelisting firewall inbounds.
+    # To only whitelist the inbounds of the server, the following approach is used:
+    # - Add a static lease to set IPv6 suffix (e.g. `11`). DUID must be specified.
+    # - In Firewall - Traffic Rules, add a rule with the following settings:
+    #   - Source zone: wan
+    #   - Destination zone: lan
+    #   - Destination address: `::11/-64` for example (note the minus symbol)
+    # - Disable autoconf in dhcpcd settings with `ipv6ra_noautoconf`, such that only
+    #   the address from DHCPv6 would be selected for DDNS.
+    "ipv6ra_noautoconf"
+    # After power loss, it would be unable to acquire unicast address (public address)
+    # but only unique local address (starts with fd) from OpenWrt.
+    # This option seems to have fixed the issue but not fully tested.
+    "ipv6ra_own"
+  ];
   boot.kernel.sysctl = {
     "net.ipv4.tcp_congestion_control" = "bbr";
     "net.core.rmem_max" = 2500000;
