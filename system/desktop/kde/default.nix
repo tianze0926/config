@@ -3,6 +3,7 @@
     ./fcitx5.nix
     ./cursor.nix
     ./plasma-manager
+    ./mimeapps.nix
   ];
 
   services.xserver.enable = true;
