@@ -42,11 +42,26 @@ in {
     # - Disable autoconf in dhcpcd settings with `ipv6ra_noautoconf`, such that only
     #   the address from DHCPv6 would be selected for DDNS.
     "ipv6ra_noautoconf"
+  ];
+  services.cron = rec {
+    interface = "enp1s0";
     # After power loss, it would be unable to acquire unicast address (public address)
     # but only unique local address (starts with fd) from OpenWrt.
-    # This option seems to have fixed the issue but not fully tested.
-    "ipv6ra_own"
-  ];
+    dhcpCheck = pkgs.writeShellScriptBin "dhcp-check" ''
+      has_unique=false
+
+      while read -r line; do
+        [[ ! $line == fd* ]] && [[ ! $line == fe80* ]] && has_unique=true
+      done <<<$(grep ${interface} /proc/net/if_inet6)
+
+      if [ "$has_unique" = false ]; then
+          rm /var/db/dhcpcd/${interface}.lease6
+          systemctl restart dhcpcd.service
+      fi
+    '';
+    config.enable = true;
+    config.systemCronJobs = [ "*/2 * * * * root ${dhcpCheck}/bin/dhcp-check" ];
+  }.config;
   boot.kernel.sysctl = {
     "net.ipv4.tcp_congestion_control" = "bbr";
     "net.core.rmem_max" = 2500000;
