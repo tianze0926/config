@@ -9,6 +9,6 @@
     driversi686Linux.libvdpau-va-gl
   ];
   environment.systemPackages = with pkgs; [
-    nvtop-amd
+    nvtopPackages.amd
   ];
 }

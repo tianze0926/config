@@ -2,7 +2,7 @@
   # make mpv the default application for every mimetype it supports
   xdg.mimeApps.defaultApplications = builtins.listToAttrs (
     builtins.map (t: { name = t; value = "mpv.desktop"; }) rec {
-      version = "0.36.0";
+      version = "0.37.0";
       testVersion = lib.trivial.warnIfNot (
         (builtins.parseDrvName config.programs.mpv.package.name).version == version
       ) "mpv mimetypes is out of date";

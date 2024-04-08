@@ -26,7 +26,8 @@
 
     env = "XCURSOR_SIZE,24";
 
-    "device:msft0001:00-04f3:3138-touchpad" = {
+    device = {
+      name = "msft0001:00-04f3:3138-touchpad";
       sensitivity = 0.8;
       natural_scroll = true;
     };
