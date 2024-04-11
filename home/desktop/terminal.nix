@@ -11,6 +11,7 @@
       font = "monospace:size=11";
       include = "${config.programs.foot.package.themes}/share/foot/themes/hacktober";
     };
+    settings.tweak.font-monospace-warn = false;
   };
   programs.wezterm = {
     enable = true;
