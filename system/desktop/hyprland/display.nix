@@ -6,7 +6,10 @@
   })
   ({ pkgs, ... }: {
     environment.systemPackages = [ (pkgs.writeShellScriptBin "pin" ''
-      ${pkgs.copyq}/bin/copyq read image/png | ${pkgs.imv}/bin/imv -
+      tmpfile=$(mktemp)
+      ${pkgs.copyq}/bin/copyq read image/png > $tmpfile
+      ${pkgs.imv}/bin/imv $tmpfile
+      rm $tmpfile
     '') ];
     hm = [({ ... }: {
       wayland.windowManager.hyprland.settings.windowrulev2 = [
