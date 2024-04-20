@@ -6,6 +6,8 @@
     monitor = [
       "DP-1,3840x2160,0x0,1.5"
       "eDP-1,2560x1600,2560x640,2"
+      # "DP-1,2560x1440,0x0,1.25"
+      # "eDP-1,2560x1600,2048x448,2"
     ];
 
     xwayland.force_zero_scaling = true;
@@ -19,7 +21,6 @@
       "sleep 1; copyq"
       "blueman-applet"
       "fcitx5"
-      "firefox"
       "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
     ];
 
@@ -71,6 +72,7 @@
     # windowrule = float, ^(kitty)$
     # Example windowrule v2
     windowrulev2 = [
+      "float,class:^(pavucontrol)$"
       "float,class:^(com.github.hluk.copyq)$"
       "float,class:^(io.elementary.files)$"
       "workspace 10,class:^(org.freedesktop.Xwayland)$"
@@ -89,6 +91,7 @@
       "$mainMod, F, togglefloating,"
       "$mainMod, V, exec, copyq show"
       "$mainMod, R, exec, rofi -show run"
+      "$mainMod, L, exec, swaylock"
       "$mainMod, P, pseudo,"
       "$mainMod, J, togglesplit,"
       "$mainMod, W, togglegroup,"
