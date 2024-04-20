@@ -4,7 +4,7 @@
   nixConfig = {
     experimental-features = [ "nix-command" "flakes" ];
     substituters = [
-      "https://mirrors.cernet.edu.cn/nix-channels/store"
+      "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://cache.nixos.org/"
       "https://tianze0926.cachix.org"
       "https://nix-community.cachix.org"
