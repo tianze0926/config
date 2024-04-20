@@ -6,7 +6,7 @@
     ./terminal.nix
     ./mpv.nix
     ./pdf.nix
-    ./wemeet
+    ./xwayland
     ./chromium.nix
   ];
 

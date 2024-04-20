@@ -8,6 +8,8 @@
       "eDP-1,2560x1600,2560x640,2"
     ];
 
+    xwayland.force_zero_scaling = true;
+
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
     # Execute your favorite apps at launch
