@@ -35,6 +35,7 @@
     efibootmgr
   ];
   environment.variables = {
+    EDITOR = "nvim";
     SUDO_EDITOR = "nvim";
   };
 
