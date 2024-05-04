@@ -14,7 +14,6 @@
     xorg.xeyes
     gparted
     firefox
-    brave
     libreoffice
     jellyfin-media-player
     font-manager

@@ -1,6 +1,6 @@
 { ... }: {
   imports = [
-    ./firefox.nix
+    ./browser.nix
     ./mpv.nix
   ];
   xdg.mimeApps.enable = true;
