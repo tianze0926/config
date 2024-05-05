@@ -83,6 +83,7 @@
     };
     on-click = "pactl set-sink-mute @DEFAULT_SINK@ toggle";
     on-click-right = "pavucontrol";
+    reverse-scrolling = true;
   };
 
   tray = {
@@ -93,5 +94,6 @@
   backlight = {
     device = "amdgpu_bl0";
     format = "󰌢  {percent}%";
+    reverse-scrolling = true;
   };
 }
