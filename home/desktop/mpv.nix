@@ -2,6 +2,7 @@
   programs.mpv = {
     enable = true;
     config = {
+      vo = "gpu-next";
       player-operation-mode = "pseudo-gui";
       sub-font-size = "45";
       autofit-larger = "1920x1080";
