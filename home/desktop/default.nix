@@ -8,6 +8,7 @@
     ./pdf.nix
     ./xwayland
     ./chromium.nix
+    ./email.nix
   ];
 
   home.packages = with pkgs; [
