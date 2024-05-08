@@ -7,27 +7,14 @@
       };
     })
     ({ pkgs, ... }: {
-      home.packages = with pkgs; [ conda ];
-      programs.fish.functions.conda-fish = ''
-        eval /home/leo/.conda/bin/conda "shell.fish" "hook" $argv | source
-      '';
-      home.file.".condarc".text = ''
-        channels:
-          - defaults
-        show_channel_urls: true
-        default_channels:
-          - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/main
-          - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/r
-          - https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/msys2
-        custom_channels:
-          conda-forge: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-          msys2: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-          bioconda: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-          menpo: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-          pytorch: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-          pytorch-lts: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-          simpleitk: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud
-          deepmodeling: https://mirrors.tuna.tsinghua.edu.cn/anaconda/cloud/
+      # wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh
+      # bash Miniforge3-Linux-x86_64.sh -b
+      fhsFishConfig = let
+        condaPath = "~/miniforge3/bin/conda";
+      in ''
+        if test -f ${condaPath}
+          eval ${condaPath} "shell.fish" "hook" $argv | source
+        end
       '';
     })
   ];
