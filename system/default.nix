@@ -12,7 +12,7 @@
     (import ./desktop desktop)
     (import ./home-manager.nix desktop)
     ./typst.nix
-    ./lf.nix
+    ./yazi
     ./fhs.nix
     ./ssh.nix
   ];
