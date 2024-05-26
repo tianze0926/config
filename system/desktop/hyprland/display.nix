@@ -2,6 +2,7 @@
   ({ inputs, pkgs, ... }: {
     programs.hyprland.enable = true;
     programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    programs.hyprland.portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
     services.ddccontrol.enable = true;
   })
   ({ pkgs, ... }: {

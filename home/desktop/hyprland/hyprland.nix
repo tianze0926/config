@@ -1,6 +1,8 @@
 { lib, pkgs, inputs, ... }: {
+  imports = [
+    inputs.hyprland.homeManagerModules.default
+  ];
   wayland.windowManager.hyprland.enable = true;
-  wayland.windowManager.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   wayland.windowManager.hyprland.settings = {
     # See https://wiki.hyprland.org/Configuring/Monitors/
     monitor = [
