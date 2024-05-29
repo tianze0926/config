@@ -33,6 +33,7 @@ in {
       type = types.lines;
       default = "";
     };
+    config.programs.fish.enable = true;
     # The reason of copying flake.nix from store instead of symlink is that:
     # nix would throw an error treating it as a symlink attack.
     # https://github.com/NixOS/nix/blob/4a1c3762df03fd20518f7aef25ee1027ac235032/src/libexpr/flake/flake.cc#L212
