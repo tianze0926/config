@@ -29,8 +29,6 @@
     # Source a file (multi-file configs)
     # source = ~/.config/hypr/myColors.conf
 
-    env = "XCURSOR_SIZE,24";
-
     device = {
       name = "msft0001:00-04f3:3138-touchpad";
       sensitivity = 0.8;
