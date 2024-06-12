@@ -45,4 +45,6 @@
     enable = true;
     enableNotifications = true;
   };
+
+  services.logind.powerKey = "ignore";
 }
