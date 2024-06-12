@@ -9,7 +9,7 @@
       else "--enable-wayland-ime";
   in "--enable-features=UseOzonePlatform --ozone-platform=wayland ${imeFlag}";
   pkgWrapper = bin: pkg: pkgs.writeShellScriptBin bin ''
-    ${pkg}/bin/${bin} ${flags} $@
+    ${pkg}/bin/${bin} ${flags} "$@"
   '';
   desktopWrapper = bin: pkg: {
     name = ".local/share/applications/${bin}-browser.desktop";
