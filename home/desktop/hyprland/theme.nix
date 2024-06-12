@@ -1,6 +1,6 @@
 { pkgs, ... }: let
-  cursor.package = pkgs.capitaine-cursors;
-  cursor.name = "capitaine-cursors";
+  cursor.package = pkgs.rose-pine-cursor;
+  cursor.name = "BreezeX-RosePine-Linux";
 in {
   home.pointerCursor = {
     gtk.enable = true;
