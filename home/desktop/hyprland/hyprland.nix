@@ -5,14 +5,25 @@
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland.settings = {
     # See https://wiki.hyprland.org/Configuring/Monitors/
-    monitor = [
-      "DP-1,3840x2160,0x0,1.5"
-      "eDP-1,2560x1600,2560x640,2"
-      # "DP-1,2560x1440,0x0,1.25"
-      # "eDP-1,2560x1600,2048x448,2"
-    ];
-
-    xwayland.force_zero_scaling = true;
+    monitor = let
+      monitors = [
+        {name = "DP-1"; w = 3840; h = 2160; scale = 1.5;}
+        {name = "eDP-1"; w = 2560; h = 1600; scale = 2;}
+      ];
+      append = ",bitdepth,10"; # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/172
+    in let
+      # monitors are placed from left to right, bottom-aligned
+      max_h_m = lib.lists.fold (a: b: if a.h > b.h then a else b) {h = 0;} monitors;
+      scale = m: key: builtins.ceil ((m."${key}" + 0.0) / m.scale);
+      result = lib.lists.foldl (l: m: l ++ [(
+        m // rec {
+          x = if (builtins.length l) != 0 then (lib.lists.last l).xEnd else 0;
+          y = scale max_h_m "h" - scale m "h";
+          xEnd = x + scale m "w";
+        }
+      )]) [] monitors;
+      t = toString;
+    in map (m: "${m.name},${t m.w}x${t m.h},${t m.x}x${t m.y},${t m.scale}" + append) result;
 
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
