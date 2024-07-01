@@ -1,13 +1,14 @@
 { pkgs, ... }: {
-  hardware.opengl.driSupport32Bit = true;
-  hardware.opengl.extraPackages = with pkgs; [
-    vaapiVdpau
-    libvdpau-va-gl
-  ];
-  hardware.opengl.extraPackages32 = with pkgs; [
-    driversi686Linux.vaapiVdpau
-    driversi686Linux.libvdpau-va-gl
-  ];
+  hardware.graphics = let
+    extra = [
+      "libva-vdpau-driver"
+      "libvdpau-va-gl"
+    ];
+  in {
+    enable32Bit = true;
+    extraPackages = map (x: pkgs.${x}) extra;
+    extraPackages32 = map (x: pkgs.driversi686Linux.${x}) extra;
+  };
   environment.systemPackages = with pkgs; [
     nvtopPackages.amd
   ];
