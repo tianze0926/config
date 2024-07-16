@@ -11,7 +11,6 @@
         desktop.enable = true;
         disk_optimize.bootloader = "systemd-boot";
       })
-      ../../system/vm.nix
     ];
 
   # Use the systemd-boot EFI boot loader.
