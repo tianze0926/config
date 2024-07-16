@@ -14,7 +14,7 @@
 
   home.packages = with pkgs; [
     xdg-utils xorg.xhost
-    pantheon.elementary-files
+    gnome.nautilus
     copyq
     rofi-wayland grimblast
     networkmanagerapplet

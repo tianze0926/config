@@ -85,7 +85,7 @@
     windowrulev2 = [
       "float,class:^(pavucontrol)$"
       "float,class:^(com.github.hluk.copyq)$"
-      "float,class:^(io.elementary.files)$"
+      "float,class:^(org.gnome.Nautilus)$"
       "workspace 10,class:^(org.freedesktop.Xwayland)$"
     ];
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
@@ -98,7 +98,7 @@
     bind = [
       "$mainMod, C, killactive,"
       "$mainMod SHIFT, M, exit,"
-      "$mainMod, E, exec, io.elementary.files"
+      "$mainMod, E, exec, nautilus"
       "$mainMod, F, togglefloating,"
       "$mainMod SHIFT, F, fakefullscreen,"
       "$mainMod, V, exec, copyq show"
