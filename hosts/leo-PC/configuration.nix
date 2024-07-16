@@ -11,6 +11,7 @@
         desktop.enable = true;
         disk_optimize.bootloader = "systemd-boot";
       })
+      inputs.auto-cpufreq.nixosModules.default
     ];
 
   # Use the systemd-boot EFI boot loader.
@@ -40,6 +41,8 @@
   ];
 
   networking.firewall.enable = false;
+
+  programs.auto-cpufreq.enable = true;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
