@@ -4,6 +4,7 @@
   nixConfig = {
     experimental-features = [ "nix-command" "flakes" ];
     substituters = [
+      # "https://mirrors.tuna.tsinghua.edu.cn/nix-channels/store"
       "https://mirror.sjtu.edu.cn/nix-channels/store"
       "https://cache.nixos.org/"
       "https://tianze0926.cachix.org"
@@ -30,8 +31,8 @@
     plasma-manager.url = "github:pjones/plasma-manager";
     plasma-manager.inputs.nixpkgs.follows = "nixpkgs";
     plasma-manager.inputs.home-manager.follows = "home-manager";
-    auto-cpufreq = {
-      url = "github:AdnanHodzic/auto-cpufreq";
+    rose-pine-hyprcursor = {
+      url = "github:ndom91/rose-pine-hyprcursor";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

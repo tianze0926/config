@@ -100,7 +100,7 @@
       "$mainMod SHIFT, M, exit,"
       "$mainMod, E, exec, nautilus"
       "$mainMod, F, togglefloating,"
-      "$mainMod SHIFT, F, fakefullscreen,"
+      "$mainMod SHIFT, F, exec, hyprctl dispatch fullscreenstate -1 2; hyprctl setprop active syncfullscreen on"
       "$mainMod, V, exec, copyq show"
       "$mainMod, R, exec, rofi -show run"
       "$mainMod, L, exec, swaylock"

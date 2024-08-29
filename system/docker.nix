@@ -1,7 +1,6 @@
 { pkgs, config, ... }: {
   virtualisation.docker = {
     enable = true;
-    package = pkgs.docker_24;
     logDriver = "local";
     daemon.settings = {
       ipv6 = true;
