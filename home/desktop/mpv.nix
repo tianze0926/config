@@ -1,9 +1,18 @@
 { config, pkgs, lib, osConfig, ... }: {
+  imports = [
+    ({...}: {
+      # https://github.com/mpv-player/mpv/issues/11739
+      home.sessionVariables.RADV_PERFTEST = "video_decode";
+      programs.mpv.config = {
+        vo = "gpu-next";
+        gpu-api = "vulkan";
+        hwdec = "vulkan";
+      };
+    })
+  ];
   programs.mpv = {
     enable = true;
     config = {
-      vo = "gpu-next";
-      hwdec = "auto-safe";
       player-operation-mode = "pseudo-gui";
       sub-font-size = "45";
       autofit-larger = "1920x1080";
