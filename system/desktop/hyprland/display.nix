@@ -9,6 +9,15 @@
       xdg-desktop-portal-gtk
     ];
     services.ddccontrol.enable = true;
+    environment.systemPackages = with pkgs; [
+      brightnessctl
+    ];
+    hm = [({ ... }: {
+      wayland.windowManager.hyprland.settings.binde = [
+        ", XF86MonBrightnessUp, exec, brightnessctl set 5%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl set 5%-"
+      ];
+    })];
   })
   ({ pkgs, ... }: {
     environment.systemPackages = [ (pkgs.writeShellScriptBin "pin" ''
