@@ -3,6 +3,11 @@
     programs.hyprland.enable = true;
     programs.hyprland.package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     programs.hyprland.portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
+    xdg.portal.extraPortals = with pkgs; [
+      # To enforce light theme instead of dark theme:
+      # dconf write /org/gnome/desktop/interface/color-scheme "'prefer-light'"
+      xdg-desktop-portal-gtk
+    ];
     services.ddccontrol.enable = true;
   })
   ({ pkgs, ... }: {
