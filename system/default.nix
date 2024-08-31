@@ -11,7 +11,6 @@
     ./docker.nix
     (import ./desktop desktop)
     (import ./home-manager.nix desktop)
-    ./typst.nix
     ./yazi
     ./fhs.nix
     ./ssh.nix
