@@ -22,7 +22,7 @@ in {
   ];
   home.sessionVariables = {
     HYPRCURSOR_THEME = "rose-pine-hyprcursor";
-    HYPRCURSOR_SIZE = 48;
+    HYPRCURSOR_SIZE = 24;
   };
 
 }
