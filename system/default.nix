@@ -39,6 +39,8 @@
   };
 
   services.flatpak.enable = true;
+  # flatpak enables fontdir, which causes xwayland to rebuild
+  programs.xwayland.defaultFontPath = "";
 
   services.earlyoom = {
     enable = true;
