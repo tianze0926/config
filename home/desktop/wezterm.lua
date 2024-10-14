@@ -7,7 +7,8 @@ config.font = wezterm.font_with_fallback {
   'Noto Sans CJK SC',
 }
 config.font_size = 11.0
-config.color_scheme = 'Classic Dark (base16)'
+config.color_scheme = 'Ayu Light (Gogh)'
+config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_padding = {
   left = 0,
