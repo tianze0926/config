@@ -29,7 +29,7 @@
     };
     nur.url = "github:nix-community/NUR";
     myRepo.url = "github:tianze0926/nur-packages";
-    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprland.url = "github:hyprwm/Hyprland";
     # plasma-manager = {
     #   url = "github:pjones/plasma-manager";
     #   inputs.nixpkgs.follows = "nixpkgs";

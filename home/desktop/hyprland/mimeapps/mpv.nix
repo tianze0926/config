@@ -2,14 +2,14 @@
   # make mpv the default application for every mimetype it supports
   xdg.mimeApps.defaultApplications = builtins.listToAttrs (
     builtins.map (t: { name = t; value = "mpv.desktop"; }) rec {
-      version = "0.38.0";
+      version = "0.39.0";
       testVersion = lib.trivial.warnIfNot (
         (builtins.parseDrvName config.programs.mpv.package.name).version == version
       ) "mpv mimetypes is out of date";
       desktop_file = testVersion builtins.fetchTree {
         type = "file";
         url = "https://raw.githubusercontent.com/mpv-player/mpv/v${version}/etc/mpv.desktop";
-        narHash = "sha256-EN9bOrOEUYqfWKL0qFmwNWmjLmC+b/QnLV5t2jN8ooc=";
+        narHash = "sha256-fjJNsgqI4plD7ejZvoykf+MpsRvrFT974XnlwUt5u+g=";
       };
       desktop_str = builtins.readFile desktop_file;
       mimetype_match = builtins.match ".*MimeType=([^\n]*);\n.*" desktop_str;
