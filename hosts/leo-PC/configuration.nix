@@ -42,6 +42,11 @@
   networking.firewall.enable = false;
 
   services.auto-cpufreq.enable = true;
+  # https://nixos.wiki/wiki/Power_Management
+  # disable usb wakeup
+  services.udev.extraRules = ''
+    ACTION=="add", SUBSYSTEM=="pci", DRIVER=="xhci_hcd", ATTR{power/wakeup}="disabled"
+  '';
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
