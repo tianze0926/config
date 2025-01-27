@@ -6,7 +6,7 @@
         config.allowUnfree = false;
       };
     })
-    inputs.nur.overlay
+    inputs.nur.overlays.default
     (final: prev: {
       myRepo = inputs.myRepo.packages."${prev.system}";
     })

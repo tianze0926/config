@@ -3,7 +3,6 @@
 {
   imports = [
     ./shell.nix
-    ./nvim.nix
     ./python.nix
   ] ++ configSys ++ (if desktop then [
     ./desktop

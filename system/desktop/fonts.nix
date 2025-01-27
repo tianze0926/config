@@ -6,7 +6,7 @@
     noto-fonts-emoji
     source-sans source-serif
     source-han-sans source-han-serif source-han-mono
-    (nerdfonts.override { fonts = [ "CodeNewRoman" ]; })
+    nerd-fonts.code-new-roman
     liberation_ttf # replace Times New Roman, Arial
   ];
   fonts.fontconfig.defaultFonts = {

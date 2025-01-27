@@ -56,7 +56,7 @@
 
     animations.enabled = false;
     decoration = {
-      drop_shadow = false;
+      shadow.enabled = false;
       blur.enabled = false;
     };
 
