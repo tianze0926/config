@@ -8,6 +8,7 @@
       experimental = true;
       ip6tables = true;
     };
+    liveRestore = false; # https://github.com/NixOS/nixpkgs/issues/182916
   };
   systemd.services."docker-network" = let
     network = "apps";
