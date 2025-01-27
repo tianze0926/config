@@ -26,6 +26,7 @@
     in map (m: "${m.name},${t m.w}x${t m.h},${t m.x}x${t m.y},${t m.scale}" + append) result;
 
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more
+    xwayland.force_zero_scaling = true;
 
     # Execute your favorite apps at launch
     # exec-once = waybar & hyprpaper & firefox

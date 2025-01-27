@@ -16,6 +16,7 @@
     xdg-utils xorg.xhost
     gnome.nautilus
     copyq
+    wl-clipboard
     rofi-wayland grimblast
     networkmanagerapplet
     polkit_gnome

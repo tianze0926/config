@@ -16,6 +16,7 @@ in {
   home.packages = [
     xwayland-wm
     pkgs.myRepo.xdp-screen-cast
+    pkgs.xclip
   ];
   xdg.configFile.openbox.source = ./openbox;
 
