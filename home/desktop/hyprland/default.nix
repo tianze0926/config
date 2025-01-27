@@ -22,4 +22,20 @@
     ark
   ];
 
+  wayland.windowManager.hyprland.settings = {
+    bind = let
+      pin = pkgs.writeShellScriptBin "pin" ''
+        tmpfile=$(mktemp)
+        ${pkgs.copyq}/bin/copyq read image/png > $tmpfile
+        ${pkgs.imv}/bin/imv $tmpfile
+        rm $tmpfile
+      '';
+    in [
+      "$mainMod, F1, exec, grimblast copy area"
+      "$mainMod, F3, exec, ${pin}/bin/pin"
+    ];
+    windowrulev2 = [
+      "float,class:^(imv)$"
+    ];
+  };
 }

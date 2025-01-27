@@ -19,19 +19,6 @@
       ];
     })];
   })
-  ({ pkgs, ... }: {
-    environment.systemPackages = [ (pkgs.writeShellScriptBin "pin" ''
-      tmpfile=$(mktemp)
-      ${pkgs.copyq}/bin/copyq read image/png > $tmpfile
-      ${pkgs.imv}/bin/imv $tmpfile
-      rm $tmpfile
-    '') ];
-    hm = [({ ... }: {
-      wayland.windowManager.hyprland.settings.windowrulev2 = [
-        "float,class:^(imv)$"
-      ];
-    })];
-  })
   ({ pkgs, ... }: let
     pkg = pkgs.swaylock;
     pam = "swaylock";
