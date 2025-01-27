@@ -14,7 +14,7 @@
 
   home.packages = with pkgs; [
     xdg-utils xorg.xhost
-    gnome.nautilus
+    nautilus
     copyq
     wl-clipboard
     rofi-wayland grimblast
