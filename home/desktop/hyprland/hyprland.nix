@@ -91,6 +91,7 @@
     ];
     # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
+    input.kb_options = "caps:swapescape";
 
     # See https://wiki.hyprland.org/Configuring/Keywords/ for more
     "$mainMod" = "SUPER";
