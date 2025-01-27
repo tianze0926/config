@@ -4,6 +4,7 @@
       home.packages = with pkgs; [ python312Full ];
       xdg.configFile."pip/pip.conf".text = lib.generators.toINI {} {
         global.index-url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple";
+        install.index-url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple";
       };
     })
     ({ pkgs, ... }: {
