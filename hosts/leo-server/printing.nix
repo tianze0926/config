@@ -1,3 +1,9 @@
+# RATIONALE:
+# - some old printers requires close-source drivers, thus needing docker
+# - printer's device path may change after replugging (e.g. from /dev/bus/usb/001/002 to /dev/bus/usb/001/003), resulting in docker's `--device` not working
+# - udev can create a fixed symlink of the device, but CUPS cannot recognize it
+# - as a last resort, this method runs a script when udev detects a newly plugged device, which recreates the container with the correct device path
+
 { pkgs, config, ... }: let
   compose_up = pkgs.writeShellScript "compose_up" ''
     set -e
