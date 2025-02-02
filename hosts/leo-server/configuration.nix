@@ -166,7 +166,7 @@ in {
     zip unzipNLS
     file tree eza ripgrep fd fzf
     tmux neovim lazygit lf nnn
-    neofetch htop btop iotop iftop lazydocker
+    neofetch htop btop iotop iftop lazydocker ncdu
     s-tui stress
     strace ltrace lsof sysstat lm_sensors ethtool pciutils usbutils
     bind wget nmap socat
