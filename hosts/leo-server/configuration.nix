@@ -13,6 +13,7 @@ in {
       ./hardware-configuration.nix
       ./fhs.nix
       ./home-manager.nix
+      ./printing.nix
     ];
 
   nixpkgs.overlays = [
