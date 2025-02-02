@@ -1,6 +1,9 @@
-{ inputs, outputs, opt, config, osConfig, pkgs, ... }:
+{ inputs, outputs, opt, config, osConfig, pkgs, configSys, ... }:
 
 {
+  imports = configSys ++ [
+  ];
+
   nixpkgs.overlays = [
     outputs.overlays.stable-packages
   ];
