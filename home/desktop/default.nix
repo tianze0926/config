@@ -28,6 +28,7 @@
     cloudflared
     obs-studio
     qrscan
+    qutebrowser
   ];
 
 }

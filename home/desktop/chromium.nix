@@ -1,6 +1,6 @@
 { pkgs, osConfig, lib, ... }: let
   browsers = {
-    # chromium = pkgs.ungoogled-chromium;
+    chromium = pkgs.ungoogled-chromium;
     brave = pkgs.brave;
   };
   flags = let

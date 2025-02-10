@@ -19,6 +19,7 @@
     wl-clipboard
     rofi-wayland grimblast
     networkmanagerapplet
+    iw
     polkit_gnome
     ark
   ];

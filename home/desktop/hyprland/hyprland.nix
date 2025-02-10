@@ -8,6 +8,7 @@
     monitor = let
       monitors = [
         {name = "DP-1"; w = 3840; h = 2160; scale = 1.5;}
+        # {name = "DP-1"; w = 2560; h = 1440; scale = 1.25;}
         {name = "eDP-1"; w = 2560; h = 1600; scale = 2;}
       ];
       append = ",bitdepth,10"; # https://github.com/hyprwm/xdg-desktop-portal-hyprland/issues/172
