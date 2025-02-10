@@ -20,6 +20,7 @@
   networking.hostName = opt.hostName;
   networking.networkmanager = {
     enable = true;
+    wifi.powersave = false;
     settings."global-dns-domain-*".servers = "119.29.29.29,2402:4e00::1";
   };
   # # https://github.com/NixOS/nixpkgs/issues/180175#issuecomment-1658731959
