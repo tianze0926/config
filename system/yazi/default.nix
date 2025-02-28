@@ -20,7 +20,7 @@
         '';
       in [
         (mk "<C-s>" ''shell "fish ${fish} \"$0\" \"$@\"" --block --confirm'' "Open shell here")
-        (mk "l" "plugin --sync smart-enter" "Enter the child directory, or open the file")
+        (mk "l" "plugin smart-enter" "Enter the child directory, or open the file")
       ];
       xdg.configFile."yazi/plugins".source = ./plugins;
       xdg.configFile."yazi/init.lua".source = ./init.lua;
