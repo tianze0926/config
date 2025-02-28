@@ -8,4 +8,5 @@
   services.blueman.enable = true;
 
   services.auto-cpufreq.enable = true;
+  programs.dconf.enable = true; # virt-manager requires dconf to remember settings
 }
