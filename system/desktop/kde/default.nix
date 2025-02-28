@@ -1,21 +1,20 @@
 { pkgs, ... }: {
   imports = [
-    ./fcitx5.nix
-    ./cursor.nix
-    ./plasma-manager
-    ./mimeapps.nix
+    # ./fcitx5.nix
+    # ./cursor.nix
+    # ./plasma-manager
+    # ./mimeapps.nix
   ];
 
-  services.xserver.enable = true;
-  services.xserver.displayManager.sddm.enable = true;
-  services.xserver.displayManager.defaultSession = "plasmawayland";
-  services.xserver.desktopManager.plasma5.enable = true;
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   hardware.bluetooth.enable = true;
 
   environment.systemPackages = with pkgs; [
-    libsForQt5.yakuake
-    wl-clipboard
+    # libsForQt5.yakuake
+    # wl-clipboard
   ];
 
 }

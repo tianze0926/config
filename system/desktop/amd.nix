@@ -20,6 +20,7 @@
         case perf
           sudo auto-cpufreq --force performance
           echo manual | sudo tee /sys/class/drm/card1/device/power_dpm_force_performance_level
+          echo 5 | sudo tee /sys/class/drm/card1/device/pp_power_profile_mode
           echo 2 | sudo tee /sys/class/drm/card1/device/pp_dpm_sclk
           echo 3 | sudo tee /sys/class/drm/card1/device/pp_dpm_mclk
         case auto ""

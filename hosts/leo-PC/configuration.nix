@@ -42,7 +42,6 @@
 
   networking.firewall.enable = false;
 
-  services.auto-cpufreq.enable = true;
   # https://nixos.wiki/wiki/Power_Management
   # disable usb wakeup
   services.udev.extraRules = ''
