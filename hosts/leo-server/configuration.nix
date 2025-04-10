@@ -14,6 +14,7 @@ in {
       ./fhs.nix
       ./home-manager.nix
       ./printing.nix
+      ./ups_shutdown.nix
     ];
 
   nixpkgs.overlays = [
