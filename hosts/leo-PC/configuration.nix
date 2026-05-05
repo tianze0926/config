@@ -17,6 +17,10 @@
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  swapDevices = [{
+    device = "/var/swapfile";
+    size = 16 * 1024;
+  }];
 
   networking.hostName = opt.hostName;
   networking.networkmanager = {

@@ -1,0 +1,18 @@
+services:
+  app:
+    image: tailscale/tailscale:latest
+    hostname: nixos-pc
+    environment:
+      TS_AUTHKEY: ${AUTHKEY}
+      TS_STATE_DIR: /var/lib/tailscale
+      TS_USERSPACE: false
+    volumes:
+      - state:/var/lib/tailscale
+    devices:
+      - /dev/net/tun:/dev/net/tun
+    cap_add:
+      - net_admin
+    restart: unless-stopped
+
+volumes:
+  state:

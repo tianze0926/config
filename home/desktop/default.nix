@@ -29,6 +29,7 @@
     obs-studio
     qrscan
     qutebrowser
+    moonlight-qt
   ];
 
 }
